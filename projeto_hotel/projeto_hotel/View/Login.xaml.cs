@@ -18,12 +18,9 @@ namespace projeto_hotel.View
             NavigationPage.SetHasNavigationBar(this, false);
 
 
-            frm_login.BackgroundColor = Color.FromRgba(1, 1, 1, 0.15);
+            
 
-            txt_email.PlaceholderColor = Color.FromRgba(1, 1, 1, 0.3);
-            txt_senha.PlaceholderColor = Color.FromRgba(1, 1, 1, 0.3);
-
-            sim.Source = ImageSource.FromResource("projeto_hotel.imagens.sim.jpg");
+            sim.Source = ImageSource.FromResource("projeto_hotel.imagens.hotel1.PNG");
         }
 
         private void Button_Clicked(object sender, EventArgs e)

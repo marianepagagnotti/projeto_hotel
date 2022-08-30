@@ -3,6 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="projeto_hotel.App">
     <Application.Resources>
+        <Style x:Key="fonteCustomizada" TargetType="Label">
+            <Setter Property="FontFamily">
+                <Setter.Value>
+                    <OnPlatform x:TypeArguments="x:String"
+                                    Android="Quicksand_Book_Oblique.otf#Quicksand_Book_Oblique" />
+                </Setter.Value>
+            </Setter>
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="TextColor" Value="Black"/>
+        </Style>
+
+        <Style x:Key="titulo" TargetType="Label" BaseResourceKey="fonteCustomizada">
+            <Setter Property="FontSize" Value="Header"/>
+        </Style>
+
+        <Style x:Key="texto" TargetType="Label" BaseResourceKey="fonteCustomizada">
+            <Setter Property="FontSize" Value="Body"/>
+        </Style>
 
     </Application.Resources>
 </Application>

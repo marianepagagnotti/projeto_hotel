@@ -15,6 +15,28 @@ namespace projeto_hotel.View
         public CadastroHospedagem()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
+        }
+
+        private void dtpck_checkin_DateSelected(object sender, DateChangedEventArgs e)
+        {
+            DatePicker elemento = (DatePicker)sender;
+
+            dtpck_checkout.MinimumDate = elemento.Date.AddDays(1);
+            dtpck_checkout.MaximumDate = elemento.Date.AddMonths(6).AddDays(1);
+
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        private void Button_Clicked_2(object sender, EventArgs e)
+        {
+
         }
     }
 }

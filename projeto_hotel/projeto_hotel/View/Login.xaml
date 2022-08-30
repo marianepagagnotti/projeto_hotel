@@ -2,37 +2,39 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="projeto_hotel.View.Login"
-             BackgroundColor="#192436">
+             BackgroundColor="White">
 
     <ContentPage.Content>
 
 
         <StackLayout>
-            <Grid RowDefinitions="100,150" ColumnDefinitions="*"/>
-            <Image Aspect="AspectFill" x:Name="sim" WidthRequest="250" HeightRequest="200" Grid.Row="0" />
-
+            <Grid RowDefinitions="50,0" ColumnDefinitions="*"/>
+            <Image Aspect="AspectFill" x:Name="sim" WidthRequest="200" HeightRequest="200" Grid.Row="0" />
+            
+            <Label Text="Login de Usuários" Style="{StaticResource titulo}"
+                           TextTransform="Uppercase"
+                           TextColor="#bb6f2c"
+                           FontSize="Title"                           
+                           HorizontalTextAlignment="Center" Margin="10,50,10,0"  />
+            
             <Frame CornerRadius="8"
                    x:Name="frm_login"
                    
                    HasShadow="False"
-                   VerticalOptions="CenterAndExpand" Grid.RowSpan="2">
+                   VerticalOptions="CenterAndExpand" Grid.Row="1" Margin="10,-30,10,60">
                 
-                <StackLayout>
-                    <Label Text="Login de Usuários"
-                           TextTransform="Uppercase"
-                           TextColor="Black"
-                           FontSize="Title"                           
-                           HorizontalTextAlignment="Center" />
+                    <StackLayout>
+                       
 
-                    <Label Text="E-mail:" TextColor="Black" />
+                        <Label Text="E-mail:" TextColor="Black" Style="{StaticResource texto}"/>
                     <Entry x:Name="txt_email"
                            TextColor="Black"
                            Placeholder="Email de cadastro" />
 
-                    <Label Text="Senha:" TextColor="Black" />
-                    <Entry x:Name="txt_senha"   TextColor="Black" Placeholder="Mínimo 4 digitos" IsPassword="True" />
+                    <Label Text="Senha:" TextColor="Black" Style="{StaticResource texto}" />
+                    <Entry x:Name="txt_senha"   TextColor="Black" Placeholder="Mínimo 4 digitos" IsPassword="True"  />
 
-                    <Button Text="Entrar" BackgroundColor="Beige" Clicked="Button_Clicked" TextColor="Black" BorderColor="Black" />
+                    <Button Text="Entrar" BackgroundColor="#ffbb83" Clicked="Button_Clicked" TextColor="Black" BorderColor="Black" />
                 </StackLayout>
             </Frame>
             <Grid/>
