@@ -20,7 +20,7 @@ namespace projeto_hotel.View
 
             
 
-            sim.Source = ImageSource.FromResource("projeto_hotel.imagens.hotel1.PNG");
+            sim.Source = ImageSource.FromResource("projeto_hotel.imagens.hotel1.jpg");
         }
 
         private void Button_Clicked(object sender, EventArgs e)

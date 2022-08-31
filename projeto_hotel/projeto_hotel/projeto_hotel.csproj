@@ -11,11 +11,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="imagens\hotel1.jpeg" />
+    <None Remove="imagens\hotel1.jpg" />
     <None Remove="imagens\hotel1.PNG" />
     <None Remove="imagens\sim.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="imagens\hotel1.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="imagens\hotel1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="imagens\hotel1.PNG">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>

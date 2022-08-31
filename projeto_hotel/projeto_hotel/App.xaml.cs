@@ -15,7 +15,7 @@ namespace projeto_hotel
            // if (Properties.ContainsKey("usuario_logado"))
             MainPage = new NavigationPage(new View.CadastroHospedagem());
             //else
-                //MainPage = new NavigationPage(new View.Login());
+               //MainPage = new NavigationPage(new View.Login());
         }
 
         protected override void OnStart()

@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="projeto_hotel.View.CadastroHospedagem"
-             BackgroundColor="white">
+             BackgroundColor="#E1D8D6">
 
    
 
@@ -17,67 +17,99 @@
 
             <Label Text="Cálculo da Hospedagem"  Style="{StaticResource titulo}"
                    HorizontalTextAlignment="Center"
-                   FontSize="35"  TextColor="Black"/>
+                   FontSize="45"  TextColor="Black"/>
 
             <Label x:Name="lbl_usuario"
                    HorizontalTextAlignment="Center"
                    TextColor="Black" />
 
             <Frame CornerRadius="10"
-                   BackgroundColor="#white"
-                   Margin="15, 45, 15, 20"
+                   BackgroundColor="white"
+                   Margin="10, 5, 10, 40"
                    Padding="30">
 
                 <StackLayout>
                     <Grid ColumnDefinitions="*, *, 2*"
-                          RowDefinitions="*, *">
+                          RowDefinitions="50, 50">
                         <Label Grid.Row="0" Grid.Column="0"
-                               Text="Adultos:"  />
+                               Text="Adultos" 
+                               Margin="0,13,0,0" 
+                               FontSize="17" 
+                               TextColor="Black"/>
+                        
                         <Label Grid.Row="0" Grid.Column="1"
                                x:Name="lbl_qnt_adultos"
-                               BindingContext="{x:Reference stepperAdultos}"
-                               Text="{Binding Value}" />
+                               BindingContext="{x:Reference stepperAdultos} " 
+                               Margin="15,13,0,0"
+                               Text="{Binding Value}" 
+                               FontSize="18"
+                               TextColor="Black"/>
+                        
                         <Stepper Grid.Row="0" Grid.Column="2"
                                  x:Name="stepperAdultos"
                                  Minimum="0" Maximum="10" Increment="1" />
 
-                        <Label Grid.Row="1" Grid.Column="0" Text="Crianças"  />
+                        <Label Grid.Row="1" Grid.Column="0" 
+                               Text="Crianças" 
+                               Margin="0,13,0,0" 
+                               FontSize="17"
+                               TextColor="Black"/>
+                        
                         <Label Grid.Row="1" Grid.Column="1"
                                x:Name="lbl_qnt_criancas"
-                               BindingContext="{x:Reference stepperCriancas}"
-                               Text="{Binding Value}"/>
+                               BindingContext="{x:Reference stepperCriancas}" 
+                               Margin="15,13,0,0"
+                               Text="{Binding Value}"
+                               FontSize="17"
+                               TextColor="Black"/>
+                        
                         <Stepper Grid.Row="1" Grid.Column="2"
                                  x:Name="stepperCriancas"
-                                 Minimum="0" Maximum="10" Increment="1" />
+                                 Minimum="0" Maximum="10" Increment="1"   />
                     </Grid>
+            
 
-                    <Label Text="Escolha sua Suíte"   />
+            <Label Text="Escolha sua suíte" 
+                           FontSize="18"  
+                           FontAttributes="Bold" 
+                           Margin="0,10,0,0"
+                           />
+                    
                     <Picker x:Name="pck_suite"
                             ItemDisplayBinding="{Binding Nome}"
-                            Title="Selecione sua Acomodação"  Style="{StaticResource texto}"/>
+                            Title="Selecione sua Acomodação"  FontSize="Body"/>
 
-                    <Frame BackgroundColor="#eee"
-                           CornerRadius="10" Margin="10">
+                    <Frame BackgroundColor="#E1D8D6"
+                           CornerRadius="10" Margin="10"
+                           >
                         <StackLayout>
-                            <Label Text="Período da Estadia" />
+                            <Label Text="Período da Estadia" FontSize="16"  />
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Check-in:"  Style="{StaticResource texto}" />
+                                <Label Text="Check-in:"  
+                                       FontAttributes="Bold"
+                                       TextColor="Black"
+                                       Margin="0,14,10,0"
+                                       />
                                 <DatePicker x:Name="dtpck_checkin"
                                             DateSelected="dtpck_checkin_DateSelected"
                                             Format="dd/MM/yyyy" />
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Check-out:"  Style="{StaticResource texto}"/>
+                                <Label Text="Check-out:"  
+                                       FontAttributes="Bold"
+                                       TextColor="Black"
+                                       Margin="0,14,5,0"/>
                                 <DatePicker x:Name="dtpck_checkout"                                            
                                             Format="dd/MM/yyyy" />
                             </StackLayout>
                         </StackLayout>
                     </Frame>
-                    <Button Text="Calcular Hospedagem" Clicked="Button_Clicked" BackgroundColor="#eee" />
+                    <Button Text="Calcular Hospedagem" Clicked="Button_Clicked" 
+                            BackgroundColor="#E1D8D6" />
 
                     <Button Text="Sair" Clicked="Button_Clicked_2"
                             TextColor="Black"
-                            BackgroundColor="#eee" />
+                            BackgroundColor="#E1D8D6" />
 
                 </StackLayout>
             </Frame>
