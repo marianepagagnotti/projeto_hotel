@@ -1,6 +1,88 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="projeto_hotel.View.CalculoHospedagem">
-   
+             x:Class="projeto_hotel.View.CalculoHospedagem"
+             BackgroundColor="#E1D8D6">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Detalhes da Estadia" Style="{StaticResource titulo}" FontSize="30" 
+                   Margin="40,20,0,20"/>
+            <Label Text="{Binding Path=QuartoEscolhido.Nome}"
+                   FontSize="20"
+                   TextColor="Black"
+                   Margin="10,10,0,0"
+                   />
+
+            <Frame CornerRadius="10" Margin="9,30,10,0">
+               
+                <StackLayout Orientation="Horizontal">
+                  
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Adultos: " 
+                                      FontSize="17"
+                                      TextColor="Black"
+                                      
+                                      />
+
+                                <Span Text="{Binding QntAdultos}" FontSize="18" TextColor="#bb6f2c" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Margin="20,0,10,0">
+                        <Label.FormattedText >
+                            <FormattedString>
+                                <Span Text="Crianças: "
+                                      FontSize="18"
+                                      TextColor="Black" 
+                                      
+                                      />
+
+                                <Span Text="{Binding QntCriancas}" FontSize="18" TextColor="#bb6f2c" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                </StackLayout>
+            </Frame>
+
+            <Frame CornerRadius="10" Margin="9,10,10,10">
+                <Grid ColumnDefinitions="*, *, *" 
+                      RowDefinitions="*, *">
+                    <Label Grid.Row="0" Grid.Column="0" Text="CheckIn: " FontAttributes="Bold"
+                                       TextColor="Black" />
+                    <Label Grid.Row="0" Grid.Column="1" Text="CheckOut: " FontAttributes="Bold"
+                                       TextColor="Black" />
+                    <Label Grid.Row="0" Grid.Column="2" Text="Estadia: " FontAttributes="Bold"
+                                       TextColor="Black" />
+
+                    <Label Grid.Row="1" Grid.Column="0" Text="{Binding DataCheckIn, StringFormat='{}{0:dd/MM/yyyy}'}" TextColor="#bb6f2c"/>
+                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding DataCheckOut, StringFormat='{}{0:dd/MM/yyyy}' }" TextColor="#bb6f2c" />
+                    <Label Grid.Row="1" Grid.Column="2" Text="{Binding Estadia}" TextColor="#bb6f2c" />
+                </Grid>
+            </Frame>
+
+            <Frame CornerRadius="10" Margin="9,0,10,10">
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Valor da Hospedagem: " TextColor="Black" FontSize="17" />
+                            <Span Text="{Binding ValorTotal, StringFormat='{}{0:c}' }" FontSize="20" TextColor="#bb6f2c" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </Frame>
+
+            <Button Text="Voltar" Clicked="Button_Clicked" Margin="19,30,20,0" 
+                    BackgroundColor="#c06d18"
+                    FontAttributes="Bold"
+                    TextColor="Black"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+
+
+
 </ContentPage>
